@@ -19,6 +19,6 @@ c:\dev\AccessStore\AccessStore.Domain\bin\Debug\System.Security.Cryptography.Enc
 c:\dev\AccessStore\AccessStore.Domain\bin\Debug\System.Security.Cryptography.Primitives.dll
 c:\dev\AccessStore\AccessStore.Domain\bin\Debug\System.Security.Cryptography.X509Certificates.dll
 c:\dev\AccessStore\AccessStore.Domain\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+c:\dev\AccessStore\AccessStore.Domain\obj\Debug\AccessStore.Domain.csprojResolveAssemblyReference.cache
 c:\dev\AccessStore\AccessStore.Domain\obj\Debug\AccessStore.Domain.dll
 c:\dev\AccessStore\AccessStore.Domain\obj\Debug\AccessStore.Domain.pdb
-c:\dev\AccessStore\AccessStore.Domain\obj\Debug\AccessStore.Domain.csprojResolveAssemblyReference.cache

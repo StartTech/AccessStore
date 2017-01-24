@@ -1,7 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Data.Entity;
+using System.Data.SqlClient;
 using AccessStore.Data.Contexts;
 using AccessStore.Domain.Entities;
+using AccessStore.Domain.QueryResults;
 using AccessStore.Domain.Repositories;
+using Dapper;
 
 namespace AccessStore.Data.Repositories
 {
@@ -22,7 +28,18 @@ namespace AccessStore.Data.Repositories
 
         public Order Get(Guid id)
         {
-            return _context.Orders.Find(id);
+            return _context
+                .Orders
+                .Include(x => x.Items)
+                .FirstOrDefault(x => x.Id == id);
+        }
+
+        public IEnumerable<GetOrderQueryResult> Get(string number)
+        {
+            using (var conn = new SqlConnection(@"Server=.\sqlexpress;Database=access;User ID=sa;Password=sqlexpress;"))
+            {
+                return conn.Query<GetOrderQueryResult>("SELECT * FROM [ListOrder] WHERE [Number]=@number", new { number = number});
+            }
         }
     }
 }

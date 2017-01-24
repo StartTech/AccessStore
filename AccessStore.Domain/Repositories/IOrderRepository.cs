@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using AccessStore.Domain.Entities;
+using AccessStore.Domain.QueryResults;
 
 namespace AccessStore.Domain.Repositories
 {
@@ -7,5 +9,6 @@ namespace AccessStore.Domain.Repositories
     {
         void Save(Order order);
         Order Get(Guid id);
+        IEnumerable<GetOrderQueryResult> Get(string number);
     }
 }

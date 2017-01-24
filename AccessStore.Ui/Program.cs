@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using AccessStore.Data.Contexts;
 using AccessStore.Data.Repositories;
 using AccessStore.Domain.CommandHandlers;
@@ -15,6 +16,18 @@ namespace AccessStore.Ui
             IOrderRepository orderRepository = new OrderRepository(context);
             ICustomerRepository customerRepository = new CustomerRepository(context);
             IProductRepository productRepository = new ProductRepository(context);
+
+            var order = orderRepository.Get(new Guid("9B31D81C-5242-4ED2-8250-F09A4968FB97"));
+            var norder = orderRepository.Get("3D22C207");
+
+            Console.WriteLine(order.Number);
+            Console.WriteLine(norder.FirstOrDefault().Number);
+
+            Console.ReadKey();
+        }
+
+        private void GenerateOrder(IOrderRepository orderRepository, ICustomerRepository customerRepository, IProductRepository productRepository)
+        {
             var handler = new OrderHandler(orderRepository, customerRepository, productRepository);
             var command = new RegisterOrderCommand
             {
@@ -29,9 +42,8 @@ namespace AccessStore.Ui
                 Quantity = 1
             });
             handler.Handle(command);
-            
+
             Console.WriteLine("Pedido Salvo");
-            Console.ReadKey();
         }
     }
 }

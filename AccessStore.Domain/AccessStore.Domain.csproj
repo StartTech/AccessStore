@@ -121,6 +121,7 @@
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Enums\EStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryResults\GetOrderQueryResult.cs" />
     <Compile Include="Repositories\ICustomerRepository.cs" />
     <Compile Include="Repositories\IOrderRepository.cs" />
     <Compile Include="Repositories\IProductRepository.cs" />

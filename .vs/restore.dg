@@ -1,0 +1,4 @@
+#:c:\dev\AccessStore\AccessStore.Api\AccessStore.Api.xproj
+c:\dev\AccessStore\AccessStore.Api\AccessStore.Api.xproj|c:\dev\AccessStore\AccessStore.Data\AccessStore.Data.csproj
+c:\dev\AccessStore\AccessStore.Api\AccessStore.Api.xproj|c:\dev\AccessStore\AccessStore.Domain\AccessStore.Domain.csproj
+c:\dev\AccessStore\AccessStore.Data\AccessStore.Data.csproj|c:\dev\AccessStore\AccessStore.Domain\AccessStore.Domain.csproj
