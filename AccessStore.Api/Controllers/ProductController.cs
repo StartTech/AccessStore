@@ -1,5 +1,6 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
+using AccessStore.Data.Transactions;
 using AccessStore.Domain.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -11,7 +12,7 @@ namespace AccessStore.Api.Controllers
     {
         private readonly IProductRepository _repository;
 
-        public ProductController(IProductRepository repository)
+        public ProductController(IProductRepository repository, IUnitOfWork uow) : base(uow)
         {
             _repository = repository;
         }

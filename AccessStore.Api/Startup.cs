@@ -3,6 +3,7 @@ using System.Text;
 using AccessStore.Api.Security;
 using AccessStore.Data.Contexts;
 using AccessStore.Data.Repositories;
+using AccessStore.Data.Transactions;
 using AccessStore.Domain.CommandHandlers;
 using AccessStore.Domain.Repositories;
 using Microsoft.AspNetCore.Authorization;
@@ -48,6 +49,7 @@ namespace AccessStore.Api
             });
 
             services.AddScoped<AppDataContext, AppDataContext>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IOrderRepository, OrderRepository>();
             services.AddTransient<ICustomerRepository, CustomerRepository>();
             services.AddTransient<IProductRepository, ProductRepository>();

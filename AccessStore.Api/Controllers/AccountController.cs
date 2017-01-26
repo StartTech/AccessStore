@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading.Tasks;
 using AccessStore.Api.Security;
+using AccessStore.Data.Transactions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -19,7 +20,7 @@ namespace AccessStore.Api.Controllers
         private readonly TokenOptions _tokenOptions;
         private readonly JsonSerializerSettings _serializerSettings;
 
-        public AccountController(IOptions<TokenOptions> jwtOptions)
+        public AccountController(IOptions<TokenOptions> jwtOptions, IUnitOfWork uow) : base(uow)
         {
             _tokenOptions = jwtOptions.Value;
             ThrowIfInvalidOptions(_tokenOptions);

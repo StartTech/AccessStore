@@ -22,8 +22,7 @@ namespace AccessStore.Data.Repositories
 
         public void Save(Order order)
         {
-            _context.Orders.Add(order);
-            _context.SaveChanges();
+            _context.Orders.Add(order);            
         }
 
         public Order Get(Guid id)

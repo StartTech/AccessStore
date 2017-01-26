@@ -1,5 +1,6 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
+using AccessStore.Data.Transactions;
 using AccessStore.Domain.CommandHandlers;
 using AccessStore.Domain.Commands;
 using AccessStore.Domain.Repositories;
@@ -14,7 +15,7 @@ namespace AccessStore.Api.Controllers
         private readonly IOrderRepository _repository;
         private readonly OrderHandler _handler;
 
-        public OrderController(IOrderRepository repository, OrderHandler handler)
+        public OrderController(IOrderRepository repository, OrderHandler handler, IUnitOfWork uow) : base(uow)
         {
             _repository = repository;
             _handler = handler;
