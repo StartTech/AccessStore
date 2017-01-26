@@ -162,4 +162,5 @@ c:\dev\AccessStore\AccessStore.Api\Startup.cs
 c:\dev\AccessStore\AccessStore.Api\Controllers\AccountController.cs
 c:\dev\AccessStore\AccessStore.Api\Controllers\BaseController.cs
 c:\dev\AccessStore\AccessStore.Api\Controllers\OrderController.cs
+c:\dev\AccessStore\AccessStore.Api\Controllers\ProductController.cs
 c:\dev\AccessStore\AccessStore.Api\Security\TokenOptions.cs

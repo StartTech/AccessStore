@@ -9,6 +9,7 @@ namespace AccessStore.Domain.Repositories
     {
         void Save(Order order);
         Order Get(Guid id);
+        IEnumerable<Order> Get();
         IEnumerable<GetOrderQueryResult> Get(string number);
     }
 }

@@ -41,5 +41,10 @@ namespace AccessStore.Data.Repositories
                 return conn.Query<GetOrderQueryResult>("SELECT * FROM [ListOrder] WHERE [Number]=@number", new { number = number});
             }
         }
+
+        public IEnumerable<Order> Get()
+        {
+            return _context.Orders.ToList();
+        }
     }
 }

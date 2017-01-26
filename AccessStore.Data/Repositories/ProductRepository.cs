@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using AccessStore.Data.Contexts;
 using AccessStore.Domain.Entities;
 using AccessStore.Domain.Repositories;
@@ -18,6 +20,11 @@ namespace AccessStore.Data.Repositories
         public Product Get(Guid id)
         {
             return _context.Products.Find(id);
+        }
+
+        public IEnumerable<Product> Get()
+        {
+            return _context.Products.ToList();
         }
     }
 }
